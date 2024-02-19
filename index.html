@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenador de Palabras</title>
+    <style>
+        /* Estilos CSS para la página */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Ordenador de Palabras</h1>
+
+<div>
+    <label for="inputWords">Ingresa las palabras separadas por espacios:</label>
+    <input type="text" id="inputWords">
+    <button onclick="ordenarPalabras()">Ordenar</button>
+</div>
+
+<div id="resultado"></div>
+
+<script>
+    function ordenarPalabras() {
+        var palabras = document.getElementById("inputWords").value;
+        var palabrasOrdenadas = palabras.split(' ').sort();
+        var resultado = palabrasOrdenadas.join(' ');
+        document.getElementById("resultado").innerText = "Palabras ordenadas: " + resultado;
+    }
+</script>
+
+</body>
+</html>
+
